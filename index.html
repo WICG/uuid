@@ -19,9 +19,18 @@
       // Add additional editors here.
       // https://github.com/w3c/respec/wiki/editors
     ],
+    otherLinks: [{
+      key: 'Participation',
+      data: [
+        {
+          value: 'GitHub repository',
+          href: 'https://github.com/WICG/visual-viewport/'
+        }
+      ]
+    }],
     "shortName": "uuid",
     "specStatus": "CG-DRAFT",
-    "wg": "WICG",
+    "group": "wicg"
   };
   </script>
 </head>
@@ -29,39 +38,65 @@
 <body>
   <section id="abstract">
     <p>
-      This specification does neat stuff.
+      This specification describes an API for generating character encoded
+      Universally Unique Identifiers (UUID) based on [[RFC4122]], available
+      as a global method on <code><dfn data-cite="!HTML#window">Window</dfn></code>
+      and <code><dfn data-cite="!HTML#workerglobalscope">WorkerGlobalScope</dfn></code>
+      objects.
     </p>
   </section>
-  <section id="sotd">
-    <p>
-      This is an unofficial proposal.
-    </p>
+  <section id='sotd'>
+  </section>
   </section>
   <section id="introduction">
     <h2>Introduction</h2>
+    <em>This section is non-normative.</em>
+    <h3 class="heading settled" data-level="1.1" id="intro">
+      <span class="secno">1.1 </span>
+      <span class="content">Motivation</span>
+      <a class="self-link" href="#intro"></a>
+    </h3>
+    <h4>UUID generation is a common software requirement</h3>
     <p>
-      See <a href="https://github.com/w3c/respec/wiki/User's-Guide">ReSpec's
-      user guide</a> for how to get started!
+      The <a href="https://www.npmjs.com/package/uuid">uuid library</a> on npm
+      currently receives 131,000,000 monthly downloads and is relied on by over
+      2,600,000 repositories (as of June 2019).
+    </p>
+    <p>
+      The ubiquitous nature of the `uuid` module demonstrates that UUID generation is a common
+      requirement for JavaScript software applications, making the functionality a good candidate for the
+      standard library.
+    </p>
+    <h4>Developers "re-inventing the wheel" is potentially harmful</h4>
+    <p>
+      Developers who have not been exposed to [[RFC4122]] might naturally opt to invent their own approaches
+      to UUID generation, potentially using <code>Math.random()</code> (in <a href="https://medium.com/@betable/tifu-by-using-math-random-f1c308c4fd9d">TIFU by using <code>Math.random()</code></a>
+      there's an in-depth discussion of why a Cryptographically-Secure-Pseudo-Random-Number-Generator
+      (CSPRNG) should be used when generating UUIDs. Of primary concern is that, without a good
+      of randomness, collisions can frequently occur.
+    </p>
+    <p>
+      Introducing a UUID standard library, which dictates that a CSPRNG must be used, helps protect
+      developers from security pitfalls.
     </p>
   </section>
-  <section data-dfn-for="Foo">
-    <h2>Start your spec!</h2>
-    <pre class="idl">
-    interface Foo {
-      attribute Bar bar;
-      void doTheFoo();
-    };
-    </pre>
-    <p>
-      See <a href="https://github.com/w3c/respec/wiki/WebIDL-Guide">ReSpec's
-      WebIDL guide</a> for how to write [[!WebIDL-2]] interfaces!
-    </p>
-    <p>
-      The <dfn>doTheFoo</dfn> method.
-    </p>
-    <p>
-      The <dfn>bar</dfn> attribute.
-    </p>
+
+  <section id="conformance"></section>
+
+  <section>
+    <h2>Description</h2>
+    <section data-dfn-for="WindowOrWorkerGlobalScope">
+      <h3>Extensions to the <code>WindowOrWorkerGlobalScope</code> interface</h3>
+      <p>
+        This document extends the <code><dfn data-cite="!HTML#windoworworkerglobalscope">WindowOrWorkerGlobalScope</dfn></code>
+        interface defined by [[!HTML]].
+      </p>
+      <pre class="idl">
+        partial interface mixin WindowOrWorkerGlobalScope {
+          DOMString randomUUID();
+        };
+      </pre>
+    </section>
   </section>
 </body>
 
