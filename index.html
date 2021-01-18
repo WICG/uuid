@@ -40,9 +40,9 @@
     <p>
       This specification describes an API for generating character encoded
       Universally Unique Identifiers (UUID) based on [[RFC4122]], available
-      as a global method on <code><dfn data-cite="!HTML#window">Window</dfn></code>
-      and <code><dfn data-cite="!HTML#workerglobalscope">WorkerGlobalScope</dfn></code>
-      objects.
+      as a method on the
+      <code><dfn data-cite="WebCryptoAPI/#dfn-Crypto">Crypto</dfn></code>
+      interface.
     </p>
   </section>
   <section id='sotd'>
@@ -85,14 +85,15 @@
 
   <section>
     <h2>Description</h2>
-    <section data-dfn-for="WindowOrWorkerGlobalScope">
-      <h3>Extensions to the <code>WindowOrWorkerGlobalScope</code> interface</h3>
+    <section data-dfn-for="Crypto">
+      <h3>Extensions to the <code>Crypto</code> interface</h3>
       <p>
-        This document extends the <code><dfn data-cite="!HTML#windoworworkerglobalscope">WindowOrWorkerGlobalScope</dfn></code>
-        interface defined by [[!HTML]].
+        The <dfn data-cite="WebCryptoAPI/#dfn-Crypto">Crypto</dfn> interface is
+        defined in [[!WebCryptoAPI]].
       </p>
       <pre class="idl">
-        partial interface mixin WindowOrWorkerGlobalScope {
+        [Exposed=(Window,Worker)]
+        partial interface mixin <dfn id="dfn-Crypto"></dfn>Crypto</dfn> {
           DOMString randomUUID();
         };
       </pre>
