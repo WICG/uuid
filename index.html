@@ -93,10 +93,148 @@
       </p>
       <pre class="idl">
         [Exposed=(Window,Worker)]
-        partial interface <dfn id="dfn-Crypto"></dfn>Crypto</dfn> {
+        partial interface Crypto {
           DOMString randomUUID();
         };
       </pre>
+      <section>
+        <h4>The <code class="idl"><a href="#random-uuid" data-link-type="dfn">randomUUID()</a></code> method.</h4>
+         The <dfn class="dfn-paneled idl-code" data-dfn-for="Crypto" data-dfn-type="method" data-export data-lt="randomUUID" id="random-uuid">
+          <code>randomUUID()</code>
+        </dfn> method steps are:
+        <ol>
+          <li>
+            <p>
+              Let <var>array</var> be a new <a data-type="typedef" href="https://heycam.github.io/webidl/#idl-Uint16Array"><code>Uint16Array</code></a> with 8 elements.
+            </p>
+          </li>
+          <li>
+            <p>
+              Overwrite all elements of <var>array</var> with cryptographically random values of
+              a 16-bit unsigned integer type.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <var>timeLow</var> be an 8 character hexadecimal string
+              populated as follows:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Let <var>a</var> be the 4 character hexadecimal representation 
+                  of <code><var>array</var>[0]</code>, left padding the string with
+                  <code>"0"</code> until 4 characters are reached.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Let <var>b</var> be the 4 character hexadecimal representation 
+                  of <code><var>array</var>[1]</code>, left padding the string with
+                  <code>"0"</code> until 4 characters are reached.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Set <var>timeLow</var> equal to <var>a</var> appended to
+                  <var>b</var> (<em>left to right</em>).
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Let <var>timeMid</var> be the 4 character hexadecimal representation 
+              of <code><var>array</var>[2]</code>, left padding the string with
+              <code>"0"</code> until 4 characters are reached.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <var>timeHighAndVersion</var> be a 4 character hexidecimal string
+              populated as follows:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Set the 4 most significant bits of <code><var>array</var>[3]</code>
+                  to <code>0b0100</code>.
+                </p>
+              </li>
+              <p>
+                Set <var>timeHighAndVersion</var> equal to the 4 character hexadecimal representation 
+                of <code><var>array</var>[3]</code>, left padding the string with
+                <code>"0"</code> until 4 characters are reached.
+              </p>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Let <var>clockSeqAndReservedClockSeqLow</var> be a 4 character hexidecimal string
+              populated as follows:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Set the 2 most significant bits of <code><var>array</var>[4]</code>
+                  to <code>0b01</code>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Set <var>clockSeqAndReservedClockSeqLow</var> equal to the 4 character hexadecimal representation 
+                  of <code><var>array</var>[4]</code>, left padding the string with
+                  <code>"0"</code> until 4 characters are reached.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Let <var>node</var> be an 12 character hexadecimal string
+              populated as follows:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Let <var>c</var> be the 4 character hexadecimal representation 
+                  of <code><var>array</var>[5]</code>, left padding the string with
+                  <code>"0"</code> until 4 characters are reached.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Let <var>d</var> be the 4 character hexadecimal representation 
+                  of <code><var>array</var>[6]</code>, left padding the string with
+                  <code>"0"</code> until 4 characters are reached.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Let <var>e</var> be the 4 character hexadecimal representation 
+                  of <code><var>array</var>[7]</code>, left padding the string with
+                  <code>"0"</code> until 4 characters are reached.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Set <var>node</var> to the string created by appending
+                  <var>c</var> to <var>d</var> to <var>e</var> (<em>left to right</em>).
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Return the <a data-type="typedef" href="https://heycam.github.io/webidl/#idl-DOMString"><code>DOMString</code></a>
+              created by appending <var>timeLow</var> to <var>timeMid</var> to
+              <var>timeHighAndVersion</var> to <var>clockSeqAndReservedClockSeqLow</var>
+              to <var>node</var> (<em>left to right</em>) separating each hexadecimal string by
+              <code>"-"</code>.
+            </p>
+          </li>
+        </ol>
+      </section>
     </section>
   </section>
 </body>
