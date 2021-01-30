@@ -143,8 +143,7 @@
             <ol>
               <li>
                 <p>
-                  Set the 4 most significant bits of <var>array</var>[6]
-                  to the <code>0b0100</code> <a data-cite="RFC4122#section-4.1.3">version</a>.
+                  Set the 4 most significant bits of <var>array</var>[6], which represent the UUID <a data-cite="RFC4122#section-4.1.3">version</a>, to <code>0b0100</code>.
                 </p>
               </li>
               <li>
@@ -198,7 +197,7 @@
           the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="hexadecimal representation" id="hex-representation">hexadecimal representation</dfn>
           of a <a data-cite="INFRA#byte">byte</a> <var>value</var> is the
           two-character string created by expressing <var>value</var> in hexadecimal
-          using <a data-type="typedef" href="https://infra.spec.whatwg.org/#ascii-lower-hex-digit">ASCII lower hex digit</a>,
+          using <a data-cite="INFRA#ascii-lower-hex-digit">ASCII lower hex digits</a>,
           left-padded with <code>"0"</code> to reach two characters.
         </p>
       </section>
