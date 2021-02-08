@@ -123,73 +123,40 @@
           </li>
           <li>
             <p>
-              Let <var>timeLow</var> be the <a data-type="typedef" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a>
-              of « <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[0],
-              <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[1], <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[2], <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[3] ».
+              Set the 4 most significant bits of <var>array</var>[6], which represent the UUID <a data-cite="RFC4122#section-4.1.3">version</a>, to <code>0b0100</code>.
             </p>
           </li>
           <li>
             <p>
-              Let <var>timeMid</var> be the <a data-type="typedef" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a>
-              of « <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[4],
-              <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[5] ».
-            </p>
-          </li>
-          <li>
-            <p>
-              Let <var>timeHighAndVersion</var> be a 4 character <a data-type="typedef" href="https://infra.spec.whatwg.org/#string">string</a>
-              populated as follows:
-            </p>
-            <ol>
-              <li>
-                <p>
-                  Set the 4 most significant bits of <var>array</var>[6], which represent the UUID <a data-cite="RFC4122#section-4.1.3">version</a>, to <code>0b0100</code>.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Set <var>timeHighAndVersion</var> be the <a data-type="typedef" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a>
-                  of « <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[6],
-                  <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[7] ».
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <p>
-              Let <var>clockSeqAndReservedClockSeqLow</var> be a 4 character <a data-type="typedef" href="https://infra.spec.whatwg.org/#string">string</a>
-              populated as follows:
-            </p>
-            <ol>
-              <li>
-                <p>
-                  Set the 2 most significant bits of <var>array</var>[8], which
-                  represent the UUID <a data-cite="RFC4122#section-4.1.1">variant</a>,
-                  to <code>0b10</code>.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Set <var>clockSeqAndReservedClockSeqLow</var> be the <a data-type="typedef" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a>
-                  of « <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[8],
-                  <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[9] ».
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <p>
-              Let <var>node</var> be the <a data-type="typedef" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a>
-              of « <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[10],
-              <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[11], <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[12], <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[13],
-              <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[14], <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> <var>array</var>[15] ».
+              Set the 2 most significant bits of <var>array</var>[8], which
+              represent the UUID <a data-cite="RFC4122#section-4.1.1">variant</a>,
+              to <code>0b10</code>.
             </p>
           </li>
           <li>
             <p>
               Return the <a data-type="typedef" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a> of
-              « <var>timeLow</var>, <var>timeMid</var>, <var>timeHighAndVersion</var>,
-              <var>clockSeqAndReservedClockSeqLow</var>, <var>node</var> » with separator <code>"-"</code>.
+              « <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[0],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[1],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[2],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[3],
+                <code>"-"</code>,
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[4],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[5],
+                <code>"-"</code>,
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[6],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[7],
+                <code>"-"</code>,
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[8],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[9],
+                <code>"-"</code>,
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[10],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[11],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[12],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[13],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[14],
+                <a href="#hex-representation" data-link-type="dfn">hexadecimal representation</a> of <var>array</var>[15]
+              ».
             </p>
           </li>
         </ol>
