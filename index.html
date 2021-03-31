@@ -105,9 +105,10 @@
       </span>
       <section>
         <h4>The <code class="idl"><a href="#random-uuid" data-link-type="dfn">randomUUID()</a></code> method.</h4>
-         The <dfn class="dfn-paneled idl-code" data-dfn-for="Crypto" data-dfn-type="method" data-export data-lt="randomUUID" id="random-uuid">
-          <code>randomUUID()</code>
-        </dfn> method steps are:
+        The <dfn class="dfn-paneled idl-code" data-dfn-for="Crypto" data-dfn-type="method" data-export data-lt="randomUUID" id="random-uuid"><code>randomUUID()</code></dfn> method steps are to return the result of [=generate a random UUID|generating a random UUID=].
+
+        <p>To <dfn data-export>generate a random UUID</dfn>:</p>
+
         <ol>
           <li>
             <p>
@@ -151,7 +152,7 @@
           </li>
         </ol>
         <p>
-          For the steps described in the <code><a href="#random-uuid" data-link-type="dfn">randomUUID()</a></code> algorithm,
+          For the steps described in the [=generate a random UUID=] algorithm,
           the <dfn class="dfn-paneled" data-dfn-type="dfn" data-export data-lt="hexadecimal representation" id="hex-representation">hexadecimal representation</dfn>
           of a <a data-cite="INFRA#byte">byte</a> <var>value</var> is the
           two-character string created by expressing <var>value</var> in hexadecimal
