@@ -129,3 +129,6 @@ Many thanks for valuable feedback and advice from:
 
 Along with many other folks who've helped us navigate the standardization
 process for `randomUUID`.
+
+[rfc-4122]: https://tools.ietf.org/html/rfc4122
+[tifu]: https://medium.com/@betable/tifu-by-using-math-random-f1c308c4fd9d
