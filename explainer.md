@@ -31,7 +31,7 @@ to UUID generation, potentially using `Math.random()` (in [TIFU by using `Math.r
 there's an in-depth discussion of why a Cryptographically-Secure-Pseudo-Random-Number-Generator
 (_CSPRNG_) should be used when generating UUIDs).
 
-Introducing a UUID standard library, which dictates that a CSPRNG must be used, helps protect
+Standardizing a UUID method, which dictates that a CSPRNG must be used, helps protect
 developers from security pitfalls.
 
 ### Goals
