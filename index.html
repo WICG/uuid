@@ -172,6 +172,53 @@
       </section>
     </section>
   </section>
+  <section id="security">
+    <h2>Security considerations</h2>
+    <em>This section is non-normative.</em>
+    <dl>
+      <dt>Denial of service</dt>
+      <dd>
+      Generating random values has the potential to perform computationally expensive and/or
+      blocking work (<em>if there is not enough entropy available in the system</em>).
+      As such, hostile applications may attempt to misuse this API
+      and attempt to cause significant amount of work to be performed by an
+      implementation, denying access or services to other applications that are
+      executing. In practice, these concerns can be mitigated by using
+      non-blocking sources of randomness, e.g., "/dev/urandom".
+      See also, <dfn data-cite="WebCryptoAPI/#security-considerations">WebCrypto Security Considerations</dfn>.
+      </dd>
+      <dt>Insufficient entropy</dt>
+      <dd>
+      If <code><a href="#random-uuid" data-link-type="dfn">randomUUID()</a></code> is invoked before the underlying
+      system is seeded with enough entropy it may result in colliding UUIDs (due to cycles in the PRNG).
+      Authors of applications that use <a href="#random-uuid" data-link-type="dfn">randomUUID()</a> need to be
+      aware of these risks.
+      </dd>
+    </dl>
+  </section>
+  <section id="security">
+    <h2>Privacy considerations</h2>
+    <em>This section is non-normative.</em>
+    <dl>
+      <dt>Fingerprinting</dt>
+      <dd>
+        By exposing additional APIs that reflect capabilities of the underlying
+        platform, this specification may allow malicious applications to
+        determine or distinguish different user agents or devices. One such
+        approach is outlined in
+        <a href="https://www.youtube.com/watch?v=5sZT9FTx3aQ">Clock Around the Clock: Time-Based Device Fingerprinting</a>
+        which discusses creating a fingerprint based on a PRNG in JavaScript.
+        <a href="#random-uuid" data-link-type="dfn">randomUUID()</a> is not likely to make users more susceptible to
+        fingerprinting than they are through existing cryptography methods.
+        See also, <dfn data-cite="WebCryptoAPI/#privacy">WebCrypto Privacy Considerations</dfn>.
+      </dd>
+      <dt>Use of <a href="#random-uuid" data-link-type="dfn">randomUUID()</a> as user ID</dt>
+      <dd>
+        <a href="#random-uuid" data-link-type="dfn">randomUUID()</a> is useful for generating
+        <a href="https://w3cping.github.io/privacy-threat-model/#user-id">user IDs</a>, but does not directly give any
+        ability to generate <a href="https://w3cping.github.io/privacy-threat-model/#global-identifier">global identifiers</a>.
+      </dd>
+    </dl>
+  </section>
 </body>
-
 </html>
