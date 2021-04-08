@@ -8,9 +8,12 @@
 
 ### Participate
 
+* [issue tracker](https://github.com/WICG/uuid/issues).
+* [contributing guide](https://github.com/WICG/uuid/blob/gh-pages/CONTRIBUTING.md)
+
 ### Introduction
 
-We propose adding the `randomUUID` method to the `crypto` interface. This method
+We propose adding the `randomUUID()` method to the `crypto` interface. This method
 provides an API for generating RFC 4122 identifiers. Initially, the only
 version of UUID supported will be the [version 4 "Algorithm for Creating a UUID from Truly Random or Pseudo-Random Numbers"](https://tools.ietf.org/html/rfc4122#section-4.4).
 
@@ -26,10 +29,8 @@ requirement for JavaScript software applications, making the functionality a goo
 
 ##### Developers "re-inventing the wheel" is potentially harmful
 
-Developers who have not been exposed to RFC 4122 might naturally opt to invent their own approaches
-to UUID generation, potentially using `Math.random()` (in [TIFU by using `Math.random()`][tifu]
-there's an in-depth discussion of why a Cryptographically-Secure-Pseudo-Random-Number-Generator
-(_CSPRNG_) should be used when generating UUIDs).
+Developers who have not been exposed to RFC 4122 might naturally opt to invent their own approaches to UUID generation, potentially using `Math.random()` (as explained in [TIFU by using `Math.random()`][tifu], using non-Cryptographically-Secure-Pseudo-Random-Number-Generator, such
+as `Math.random()`, may lead to collisions).
 
 Standardizing a UUID method, which dictates that a CSPRNG must be used, helps protect
 developers from security pitfalls.
@@ -53,6 +54,11 @@ const uuid = crypto.randomUUID(); // "52e6953d-edbe-4953-be2e-65ed3836b2f0"
 ```js
 const uuid = randomUUID(); // "42e6953d-edbe-4953-be2e-65ed3836b2f0"
 ```
+
+The primary reason that we are advocating that `randomUUID()` be added to
+the `crypto` interface, rather than `global`, is the important requirement
+that UUIDs be generated using a CSPRNG. Inclusion in the `crypto` namespace
+helps emphasize this requirement.
 
 ### Detailed design discussion
 
