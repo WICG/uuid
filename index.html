@@ -103,7 +103,7 @@
       <pre class="idl">
         [Exposed=(Window,Worker)]
         partial interface Crypto {
-          DOMString randomUUID();
+          [SecureContext] DOMString randomUUID();
         };
       </pre>
       <p class="note" role="note"><span>Note:
