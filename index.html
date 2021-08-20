@@ -11,30 +11,30 @@
     "use strict";
     // See https://github.com/w3c/respec/wiki/ for how to configure ReSpec
     var respecConfig = {
-    "github": "WICG/uuid",
-    "editors": [{
-        name: "Ben Coe",
-        email: "bencoe@google.com",
-        company: "Google",
-        companyURL: "https://google.com",
-      },
-      // Add additional editors here.
-      // https://github.com/w3c/respec/wiki/editors
-      {
-        name: "Robert Kieffer",
-        email: "robert@broofa.com",
-      },
-      {
-        name: "Christoph Tavan",
-        email: "ctavan@google.com",
-        company: "Google",
-        companyURL: "https://google.com",
-      }
-    ],
-    "shortName": "uuid",
-    "specStatus": "CG-DRAFT",
-    "group": "wicg",
-    xref: "web-platform",
+      "github": "WICG/uuid",
+      "editors": [{
+          name: "Ben Coe",
+          email: "bencoe@google.com",
+          company: "Google",
+          companyURL: "https://google.com",
+        },
+        // Add additional editors here.
+        // https://github.com/w3c/respec/wiki/editors
+        {
+          name: "Robert Kieffer",
+          email: "robert@broofa.com",
+        },
+        {
+          name: "Christoph Tavan",
+          email: "ctavan@google.com",
+          company: "Google",
+          companyURL: "https://google.com",
+        }
+      ],
+      "shortName": "uuid",
+      "specStatus": "CG-DRAFT",
+      "group": "wicg",
+      "xref": "web-platform",
     };
     </script>
   </head>
@@ -56,10 +56,12 @@
         Usage Example
       </h2>
       <p>
-        To generate a UUID, simply call the {{Crypto/randomUUID()}} method:
+        To generate a UUID, simply call {{Crypto}}'s {{Crypto/randomUUID()}}
+        method:
       </p>
-      <pre class="example js">
-        const uuid = crypto.randomUUID();
+      <pre class="example js" title="Generate unique name for download">
+        const filename = `${crypto.randomUUID()}.txt`;
+        // do something with filename.
       </pre>
     </section>
     <section data-dfn-for="Crypto">
@@ -149,8 +151,8 @@
         </li>
       </ol>
       <p>
-        For the steps described in the [=generate a random UUID=] algorithm, the
-        <dfn>hexadecimal representation</dfn> of a [=byte=] |value| is the
+        For the steps described in the [=generate a random UUID=] algorithm,
+        the <dfn>hexadecimal representation</dfn> of a [=byte=] |value| is the
         two-character string created by expressing |value| in hexadecimal using
         [=ASCII lower hex digits=], left-padded with `"0"` to reach two
         [=characters=].
