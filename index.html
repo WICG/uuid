@@ -113,41 +113,22 @@
         UUID <a data-cite="RFC4122#section-4.1.1">variant</a>, to `0b10`.
         </li>
         <li>
-          <p>
-            Return the [=string/concatenate|concatenation=] of «
-          </p>
-          <ol style="list-style-type: none">
-            <li>[=hexadecimal representation=] of |array|[0], [=hexadecimal
-            representation=] of |array|[1], [=hexadecimal representation=] of
-            |array|[2], [=hexadecimal representation=] of |array|[3],
-            </li>
-            <li>`"-"`,
-            </li>
-            <li>[=hexadecimal representation=] of |array|[4], [=hexadecimal
-            representation=] of |array|[5],
-            </li>
-            <li>`"-"`,
-            </li>
-            <li>[=hexadecimal representation=] of |array|[6], [=hexadecimal
-            representation=] of |array|[7],
-            </li>
-            <li>`"-"`,
-            </li>
-            <li>[=hexadecimal representation=] of |array|[8], [=hexadecimal
-            representation=] of |array|[9],
-            </li>
-            <li>`"-"`,
-            </li>
-            <li>[=hexadecimal representation=] of |array|[10], [=hexadecimal
-            representation=] of |array|[11], [=hexadecimal representation=] of
-            |array|[12], [=hexadecimal representation=] of |array|[13],
-            [=hexadecimal representation=] of |array|[14], [=hexadecimal
-            representation=] of |array|[15]
-            </li>
-          </ol>
-          <p>
-            ».
-          </p>
+          Let |timeLow:string| be [=hexadecimal representation=] of |array| from 0 to 3.
+        </li>
+        <li>
+          Let |timeMid:string| be [=hexadecimal representation=] of |array| from 4 to 5.
+        </li>
+        <li>
+          Let |timeHighAndVersion:string| be [=hexadecimal representation=] of |array| from 6 to 7.
+        </li>
+        <li>
+          Let |clockSeqAndReservedClockSeqLow:string| be [=hexadecimal representation=] of |array| from 8 to 9.
+        </li>
+        <li>
+          Let |node:string| be [=hexadecimal representation=] of |array| from 10 to 15.
+        </li>
+        <li>
+          Return the [=string/concatenate|concatenation=] of « |timeLow|, |timeMid|, |timeHighAndVersion|, |clockSeqAndReservedClockSeqLow|, |node| » using separator "-".
         </li>
       </ol>
       <p>
