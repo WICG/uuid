@@ -9,6 +9,11 @@ This is the repository for uuid. You're welcome to
  * [Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1723674) - Work in progress.
  * [WebKit](https://bugs.webkit.org/show_bug.cgi?id=229240) - Implemented, not shipped yet.
 
+### Other runtimes
+
+* [Deno](https://github.com/denoland/deno/pull/10848) - v1.11.
+* [Node.js](https://github.com/nodejs/node/pull/36729) - v14.17.0.
+
 ## Usage example
 
 ```JS
@@ -27,7 +32,7 @@ requirement for JavaScript software applications, making the functionality a goo
 standard library.
 ### Developers "re-inventing the wheel" is potentially harmful
 
-Developers who have not been exposed to [RFC4122] might naturally opt to invent their own approaches
+Developers who have not been exposed to [RFC4122](https://www.rfc-editor.org/rfc/rfc4122) might naturally opt to invent their own approaches
 to UUID generation, potentially using `Math.random()`.
 
 There's an in-depth discussion of why a Cryptographically-Secure-Pseudo-Random-Number-Generator
