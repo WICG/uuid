@@ -57,7 +57,7 @@ const uuid = crypto.randomUUID({
 ```
 
 See: [#25](https://github.com/WICG/uuid/issues/25),
-[#36][https://github.com/WICG/uuid/issues/36].
+[#36](https://github.com/WICG/uuid/issues/36).
 
 ## Add isValidUUID method
 
