@@ -40,3 +40,29 @@ There's an in-depth discussion of why a Cryptographically-Secure-Pseudo-Random-N
 of randomness, collisions can frequently occur.
 
 Introducing a UUID standard library, which dictates that a CSPRNG must be used, helps protect developers from security pitfalls.
+
+## Potential future work
+
+## Support for additional UUID formats
+
+If compelling use cases are found for other UUID formats, `crypto.randomUUID()`
+might be extended to support them.
+
+This would potentially take the form of an options bag:
+
+```js
+const uuid = crypto.randomUUID({
+  format: 'v6'
+});
+```
+
+See: [#25](https://github.com/WICG/uuid/issues/25),
+[#36][https://github.com/WICG/uuid/issues/36].
+
+## Add isValidUUID method
+
+In reviewing [chromium#2804758](https://chromium-review.googlesource.com/c/chromium/src/+/2804758), [@mikewest](https://github.com/mikewest) suggested:
+
+> For the future: I wonder whether it's worth exposing `WTF::IsValidUUID` as well, as an analog to the `uuid.validate()` method in the UUID npm package?
+
+It would be worth exploring if users would find exposing this method useful.
