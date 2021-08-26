@@ -45,19 +45,7 @@ Introducing a UUID standard library, which dictates that a CSPRNG must be used, 
 
 ### Support for additional UUID formats
 
-If compelling use cases are found for other UUID formats, `crypto.randomUUID()`
-might be extended to support them.
-
-This would potentially take the form of an options bag:
-
-```js
-const uuid = crypto.randomUUID({
-  format: 'v6'
-});
-```
-
-See: [#25](https://github.com/WICG/uuid/issues/25),
-[#36](https://github.com/WICG/uuid/issues/36).
+If compelling use cases are found for other UUID formats, the API might be extended to support them. If this is of interest to you, please join the discussion in [issue #36](https://github.com/WICG/uuid/issues/36).
 
 ### Add isValidUUID method
 
