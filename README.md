@@ -43,7 +43,7 @@ Introducing a UUID standard library, which dictates that a CSPRNG must be used, 
 
 ## Potential future work
 
-## Support for additional UUID formats
+### Support for additional UUID formats
 
 If compelling use cases are found for other UUID formats, `crypto.randomUUID()`
 might be extended to support them.
@@ -59,7 +59,7 @@ const uuid = crypto.randomUUID({
 See: [#25](https://github.com/WICG/uuid/issues/25),
 [#36](https://github.com/WICG/uuid/issues/36).
 
-## Add isValidUUID method
+### Add isValidUUID method
 
 In reviewing [chromium#2804758](https://chromium-review.googlesource.com/c/chromium/src/+/2804758), [@mikewest](https://github.com/mikewest) suggested:
 
