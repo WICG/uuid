@@ -38,9 +38,8 @@ developers from security pitfalls.
 ### Goals
 
 Provide a straightforward and secure mechanism for generating UUIDs that 
-addresses users' common needs (_identifiers for generated pages, identifiers for sessions,
-identifiers for generated HTML elements, database keys, etc._ ), while
-minimizing the amount of domain knowledge a user requires to discover and
+addresses developers' common needs (_identifiers for generated pages, identifiers for sessions, identifiers for generated HTML elements, database keys, etc._ ), while
+minimizing the amount of domain knowledge a developer requires to discover and
 use the feature.
 
 ### Proposed API (addition to crypto interface)
