@@ -269,21 +269,35 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           discussion of this specification.
         
     
-  </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#usage-example"><bdi class="secno">1. </bdi>
+  </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#goals"><bdi class="secno">1. </bdi>
+        Goals
+      </a></li><li class="tocline"><a class="tocxref" href="#usage-example"><bdi class="secno">2. </bdi>
         Usage Example
-      </a></li><li class="tocline"><a class="tocxref" href="#extensions-to-the-crypto-interface"><bdi class="secno">2. </bdi>
+      </a></li><li class="tocline"><a class="tocxref" href="#extensions-to-the-crypto-interface"><bdi class="secno">3. </bdi>
         Extensions to the <code>Crypto</code> interface
-      </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#the-randomuuid-method"><bdi class="secno">2.1 </bdi>
+      </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#the-randomuuid-method"><bdi class="secno">3.1 </bdi>
           The <code>randomUUID()</code> method
-        </a></li></ol></li><li class="tocline"><a class="tocxref" href="#generating-a-random-uuid"><bdi class="secno">3. </bdi>
+        </a></li></ol></li><li class="tocline"><a class="tocxref" href="#generating-a-random-uuid"><bdi class="secno">4. </bdi>
         Generating a random UUID
-      </a></li><li class="tocline"><a class="tocxref" href="#security"><bdi class="secno">4. </bdi>
+      </a></li><li class="tocline"><a class="tocxref" href="#security"><bdi class="secno">5. </bdi>
         Security considerations
-      </a></li><li class="tocline"><a class="tocxref" href="#privacy"><bdi class="secno">5. </bdi>
+      </a></li><li class="tocline"><a class="tocxref" href="#privacy"><bdi class="secno">6. </bdi>
         Privacy considerations
-      </a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">6. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+      </a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">7. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+    <section id="goals">
+      <h2 id="x1-goals"><bdi class="secno">1. </bdi>
+        Goals
+      <a class="self-link" aria-label="§" href="#goals"></a></h2>
+      <p>
+        Provide a straightforward and secure mechanism for generating UUIDs
+        that addresses developers' common needs (identifiers for generated pages,
+        identifiers for sessions, identifiers for generated HTML elements,
+        database keys, etc.), while minimizing the amount of domain knowledge
+        a developer requires to discover and use the feature.
+      </p>
+    </section>
     <section id="usage-example">
-      <h2 id="x1-usage-example"><bdi class="secno">1. </bdi>
+      <h2 id="x2-usage-example"><bdi class="secno">2. </bdi>
         Usage Example
       <a class="self-link" aria-label="§" href="#usage-example"></a></h2>
       <p>
@@ -298,7 +312,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       </div>
     </section>
     <section data-dfn-for="Crypto" id="extensions-to-the-crypto-interface">
-      <h2 id="x2-extensions-to-the-crypto-interface"><bdi class="secno">2. </bdi>
+      <h2 id="x3-extensions-to-the-crypto-interface"><bdi class="secno">3. </bdi>
         Extensions to the <code>Crypto</code> interface
       <a class="self-link" aria-label="§" href="#extensions-to-the-crypto-interface"></a></h2>
       <pre class="idl def" id="webidl-1653845771"><span class="idlHeader"><a class="self-link" href="#webidl-1653845771">WebIDL</a></span><code><span data-idl="" class="idlInterface" id="idl-def-crypto-partial-1" data-title="Crypto">[<span class="extAttr"><a data-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed">Exposed</a>=(<a data-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window">Window</a>,<a data-lt="WorkerGlobalScope" data-type="interface" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">Worker</a>)</span>]
@@ -313,7 +327,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
         </p>
       </aside></div>
       <section id="the-randomuuid-method">
-        <h3 id="x2-1-the-randomuuid-method"><bdi class="secno">2.1 </bdi>
+        <h3 id="x3-1-the-randomuuid-method"><bdi class="secno">3.1 </bdi>
           The <code>randomUUID()</code> method
         <a class="self-link" aria-label="§" href="#the-randomuuid-method"></a></h3>
         <p>
@@ -323,7 +337,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       </section>
     </section>
     <section id="generating-a-random-uuid">
-      <h2 id="x3-generating-a-random-uuid"><bdi class="secno">3. </bdi>
+      <h2 id="x4-generating-a-random-uuid"><bdi class="secno">4. </bdi>
         Generating a random UUID
       <a class="self-link" aria-label="§" href="#generating-a-random-uuid"></a></h2>
       <p>
@@ -382,7 +396,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       </p>
     </section>
     <section id="security" class="informative">
-      <h2 id="x4-security-considerations"><bdi class="secno">4. </bdi>
+      <h2 id="x5-security-considerations"><bdi class="secno">5. </bdi>
         Security considerations
       <a class="self-link" aria-label="§" href="#security"></a></h2><p><em>This section is non-normative.</em></p>
       <dl>
@@ -412,7 +426,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       </dl>
     </section>
     <section id="privacy" class="informative">
-      <h2 id="x5-privacy-considerations"><bdi class="secno">5. </bdi>
+      <h2 id="x6-privacy-considerations"><bdi class="secno">6. </bdi>
         Privacy considerations
       <a class="self-link" aria-label="§" href="#privacy"></a></h2><p><em>This section is non-normative.</em></p>
       <dl>
@@ -439,7 +453,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
         </dd>
       </dl>
     </section>
-    <section id="conformance"><h2 id="x6-conformance"><bdi class="secno">6. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p></section>
+    <section id="conformance"><h2 id="x7-conformance"><bdi class="secno">7. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p></section>
   
 
 <section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
@@ -459,13 +473,13 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-    <a href="#ref-for-dom-crypto-randomuuid-1" title="§ 1. Usage Example">§ 1. Usage Example</a> 
+    <a href="#ref-for-dom-crypto-randomuuid-1" title="§ 2. Usage Example">§ 2. Usage Example</a> 
   </li><li>
-    <a href="#ref-for-dom-crypto-randomuuid-2" title="§ 2. Extensions to the Crypto interface">§ 2. Extensions to the Crypto interface</a> <a href="#ref-for-dom-crypto-randomuuid-3" title="Reference 2">(2)</a> 
+    <a href="#ref-for-dom-crypto-randomuuid-2" title="§ 3. Extensions to the Crypto interface">§ 3. Extensions to the Crypto interface</a> <a href="#ref-for-dom-crypto-randomuuid-3" title="Reference 2">(2)</a> 
   </li><li>
-    <a href="#ref-for-dom-crypto-randomuuid-4" title="§ 4. Security considerations">§ 4. Security considerations</a> <a href="#ref-for-dom-crypto-randomuuid-5" title="Reference 2">(2)</a> 
+    <a href="#ref-for-dom-crypto-randomuuid-4" title="§ 5. Security considerations">§ 5. Security considerations</a> <a href="#ref-for-dom-crypto-randomuuid-5" title="Reference 2">(2)</a> 
   </li><li>
-    <a href="#ref-for-dom-crypto-randomuuid-6" title="§ 5. Privacy considerations">§ 5. Privacy considerations</a> <a href="#ref-for-dom-crypto-randomuuid-7" title="Reference 2">(2)</a> <a href="#ref-for-dom-crypto-randomuuid-8" title="Reference 3">(3)</a> 
+    <a href="#ref-for-dom-crypto-randomuuid-6" title="§ 6. Privacy considerations">§ 6. Privacy considerations</a> <a href="#ref-for-dom-crypto-randomuuid-7" title="Reference 2">(2)</a> <a href="#ref-for-dom-crypto-randomuuid-8" title="Reference 3">(3)</a> 
   </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-generate-a-random-uuid" aria-label="Links in this document to definition: generate a random UUID">
@@ -477,9 +491,9 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-    <a href="#ref-for-dfn-generate-a-random-uuid-1" title="§ 2.1 The randomUUID() method">§ 2.1 The randomUUID() method</a> 
+    <a href="#ref-for-dfn-generate-a-random-uuid-1" title="§ 3.1 The randomUUID() method">§ 3.1 The randomUUID() method</a> 
   </li><li>
-    <a href="#ref-for-dfn-generate-a-random-uuid-2" title="§ 3. Generating a random UUID">§ 3. Generating a random UUID</a> 
+    <a href="#ref-for-dfn-generate-a-random-uuid-2" title="§ 4. Generating a random UUID">§ 4. Generating a random UUID</a> 
   </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-hexadecimal-representation" aria-label="Links in this document to definition: hexadecimal representation">
@@ -491,7 +505,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-    <a href="#ref-for-dfn-hexadecimal-representation-1" title="§ 3. Generating a random UUID">§ 3. Generating a random UUID</a> <a href="#ref-for-dfn-hexadecimal-representation-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-hexadecimal-representation-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-hexadecimal-representation-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-hexadecimal-representation-5" title="Reference 5">(5)</a> <a href="#ref-for-dfn-hexadecimal-representation-6" title="Reference 6">(6)</a> <a href="#ref-for-dfn-hexadecimal-representation-7" title="Reference 7">(7)</a> <a href="#ref-for-dfn-hexadecimal-representation-8" title="Reference 8">(8)</a> <a href="#ref-for-dfn-hexadecimal-representation-9" title="Reference 9">(9)</a> <a href="#ref-for-dfn-hexadecimal-representation-10" title="Reference 10">(10)</a> <a href="#ref-for-dfn-hexadecimal-representation-11" title="Reference 11">(11)</a> <a href="#ref-for-dfn-hexadecimal-representation-12" title="Reference 12">(12)</a> <a href="#ref-for-dfn-hexadecimal-representation-13" title="Reference 13">(13)</a> <a href="#ref-for-dfn-hexadecimal-representation-14" title="Reference 14">(14)</a> <a href="#ref-for-dfn-hexadecimal-representation-15" title="Reference 15">(15)</a> <a href="#ref-for-dfn-hexadecimal-representation-16" title="Reference 16">(16)</a> 
+    <a href="#ref-for-dfn-hexadecimal-representation-1" title="§ 4. Generating a random UUID">§ 4. Generating a random UUID</a> <a href="#ref-for-dfn-hexadecimal-representation-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-hexadecimal-representation-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-hexadecimal-representation-4" title="Reference 4">(4)</a> <a href="#ref-for-dfn-hexadecimal-representation-5" title="Reference 5">(5)</a> <a href="#ref-for-dfn-hexadecimal-representation-6" title="Reference 6">(6)</a> <a href="#ref-for-dfn-hexadecimal-representation-7" title="Reference 7">(7)</a> <a href="#ref-for-dfn-hexadecimal-representation-8" title="Reference 8">(8)</a> <a href="#ref-for-dfn-hexadecimal-representation-9" title="Reference 9">(9)</a> <a href="#ref-for-dfn-hexadecimal-representation-10" title="Reference 10">(10)</a> <a href="#ref-for-dfn-hexadecimal-representation-11" title="Reference 11">(11)</a> <a href="#ref-for-dfn-hexadecimal-representation-12" title="Reference 12">(12)</a> <a href="#ref-for-dfn-hexadecimal-representation-13" title="Reference 13">(13)</a> <a href="#ref-for-dfn-hexadecimal-representation-14" title="Reference 14">(14)</a> <a href="#ref-for-dfn-hexadecimal-representation-15" title="Reference 15">(15)</a> <a href="#ref-for-dfn-hexadecimal-representation-16" title="Reference 16">(16)</a> 
   </li>
   </ul>
     </div><script id="respec-dfn-panel">(() => {
