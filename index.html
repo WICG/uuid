@@ -116,9 +116,7 @@
       <ol>
         <li>Let |array| be a [=list=] with 16 elements of the type [=byte=].
         </li>
-        <li>Overwrite all elements of |array| with cryptographically secure
-        random values of the type [=byte=].
-        </li>
+        <li>Fill |bytes| with cryptographically secure random bytes.</li>
         <li>Set the 4 most significant bits of |array|[6], which represent the
         UUID <a data-cite="RFC4122#section-4.1.3">version</a>, to `0b0100`.
         </li>
@@ -164,11 +162,11 @@
         </li>
       </ol>
       <p>
-        For the steps described in the [=generate a random UUID=] algorithm,
-        the <dfn>hexadecimal representation</dfn> of a [=byte=] |value| is the
+        For the steps described in the algorithm to [= generate a random UUID =],
+        the <dfn>hexadecimal representation</dfn> of a byte |value| is the
         two-character string created by expressing |value| in hexadecimal using
-        [=ASCII lower hex digits=], left-padded with `"0"` to reach two
-        [=characters=].
+        [= ASCII lower hex digits =], left-padded with `"0"` to reach two
+        [= ASCII lower hex digits =].
       </p>
     </section>
     <section id="security" class="informative">
