@@ -1,15 +1,14 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.13.2">
+<meta name="generator" content="ReSpec 26.16.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 span.example-title{text-transform:none}
-aside.example,div.example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
 div.illegal-example{color:red}
 div.illegal-example p{color:#000}
-aside.example,div.example{padding:.5em;border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
 aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
-aside.example div.example span.example-title{color:#999}
 .example pre{background-color:rgba(0,0,0,.03)}
 </style>
 <style>
@@ -43,11 +42,11 @@ a.idlEnumItem{color:#000;border-bottom:1px dotted #ccc;text-decoration:none}
 .idlSectionComment{color:gray}
 .idlIncludes a{font-weight:700}
 .respec-button-copy-paste:focus{text-decoration:none;border-color:#51a7e8;outline:0;box-shadow:0 0 5px rgba(81,167,232,.5)}
-.respec-button-copy-paste.selected:focus,.respec-button-copy-paste:focus:hover{border-color:#51a7e8}
-.respec-button-copy-paste.zeroclipboard-is-active,.respec-button-copy-paste.zeroclipboard-is-hover,.respec-button-copy-paste:active,.respec-button-copy-paste:hover{text-decoration:none;background-color:#ddd;background-image:linear-gradient(#eee,#ddd);border-color:#ccc}
-.respec-button-copy-paste.selected,.respec-button-copy-paste.zeroclipboard-is-active,.respec-button-copy-paste:active{background-color:#dcdcdc;background-image:none;border-color:#b5b5b5;box-shadow:inset 0 2px 4px rgba(0,0,0,.15)}
+.respec-button-copy-paste:is(:focus:hover,.selected:focus){border-color:#51a7e8}
+.respec-button-copy-paste:is(:hover,:active,.zeroclipboard-is-hover,.zeroclipboard-is-active){text-decoration:none;background-color:#ddd;background-image:linear-gradient(#eee,#ddd);border-color:#ccc}
+.respec-button-copy-paste:is(:active,.selected,.zeroclipboard-is-active){background-color:#dcdcdc;background-image:none;border-color:#b5b5b5;box-shadow:inset 0 2px 4px rgba(0,0,0,.15)}
 .respec-button-copy-paste.selected:hover{background-color:#cfcfcf}
-.respec-button-copy-paste.disabled,.respec-button-copy-paste.disabled:hover,.respec-button-copy-paste:disabled,.respec-button-copy-paste:disabled:hover{color:rgba(102,102,102,.5);cursor:default;background-color:rgba(229,229,229,.5);background-image:none;border-color:rgba(197,197,197,.5);box-shadow:none}
+.respec-button-copy-paste:is(:disabled,:disabled:hover,.disabled,.disabled:hover){color:rgba(102,102,102,.5);cursor:default;background-color:rgba(229,229,229,.5);background-image:none;border-color:rgba(197,197,197,.5);box-shadow:none}
 @media print{
 .respec-button-copy-paste{visibility:hidden}
 }
@@ -83,7 +82,7 @@ dfn{cursor:pointer}
 100%{transform:scale(1,1)}
 }
 .hljs{background:0 0!important}
-a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
 dfn{font-weight:700}
 a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
 a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
@@ -125,11 +124,11 @@ details.respec-tests-details>li{padding-left:1em}
 a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 h2,h3,h4,h5,h6{position:relative}
 aside.example .marker>a.self-link{color:inherit}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
-h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
+:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
 @media (max-width:767px){
 dd{margin-left:0}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
+:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
 }
 @media print{
 .removeOnSave{display:none}
@@ -185,16 +184,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "specStatus": "CG-DRAFT",
   "group": "wicg",
   "xref": "web-platform",
-  "publishISODate": "2021-08-26T00:00:00.000Z",
-  "generatedSubtitle": "Draft Community Group Report 26 August 2021"
+  "publishISODate": "2021-10-15T00:00:00.000Z",
+  "generatedSubtitle": "Draft Community Group Report 15 October 2021"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-draft"></head>
-  <body data-cite="WebIDL webcryptoapi HTML INFRA URL WEBIDL DOM FETCH" class="h-entry"><div class="head">
+  <body data-cite="WEBIDL webcryptoapi HTML INFRA URL WEBIDL DOM FETCH" class="h-entry"><div class="head">
      <h1 id="title" class="title">uuid</h1>
     
     <h2>
       Draft Community Group Report
-      <time class="dt-published" datetime="2021-08-26">26 August 2021</time>
+      <time class="dt-published" datetime="2021-10-15">15 October 2021</time>
     </h2>
     <dl>
       
@@ -216,15 +215,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </dd>
       
       
-      <dt>Participate:</dt><dd>
-    <a href="https://github.com/WICG/uuid/">GitHub WICG/uuid</a>
-  </dd><dd>
-    <a href="https://github.com/WICG/uuid/issues/">File an issue</a>
-  </dd><dd>
-    <a href="https://github.com/WICG/uuid/commits/gh-pages">Commit history</a>
-  </dd><dd>
-    <a href="https://github.com/WICG/uuid/pulls/">Pull requests</a>
-  </dd>
+      
     </dl>
     
     <p class="copyright">
@@ -304,9 +295,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         To generate a UUID, simply call <a data-link-type="idl" data-lt="Crypto" data-type="interface" href="https://www.w3.org/TR/WebCryptoAPI/#dfn-Crypto"><code>Crypto</code></a>'s <a data-link-type="idl" data-lt="randomUUID()" href="#dom-crypto-randomuuid" class="internalDFN" id="ref-for-dom-crypto-randomuuid-1"><code>randomUUID</code></a><code>()</code>
         method:
       </p>
-      <div class="example" id="example-1-generate-unique-name-for-download">
+      <div class="example" id="example-generate-unique-name-for-download">
         <div class="marker">
-    <a class="self-link" href="#example-1-generate-unique-name-for-download">Example<bdi> 1</bdi></a><span class="example-title">: Generate unique name for download</span>
+    <a class="self-link" href="#example-generate-unique-name-for-download">Example<bdi> 1</bdi></a><span class="example-title">: Generate unique name for download</span>
   </div> <pre aria-busy="false"><code class="hljs js"><span class="hljs-keyword">const</span> filename = <span class="hljs-string">`<span class="hljs-subst">${crypto.randomUUID()}</span>.txt`</span>;
 <span class="hljs-comment">// do something with filename.</span></code></pre>
       </div>
@@ -315,9 +306,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <h2 id="x3-extensions-to-the-crypto-interface"><bdi class="secno">3. </bdi>
         Extensions to the <code>Crypto</code> interface
       <a class="self-link" aria-label="§" href="#extensions-to-the-crypto-interface"></a></h2>
-      <pre class="idl def" id="webidl-1653845771"><span class="idlHeader"><a class="self-link" href="#webidl-1653845771">WebIDL</a></span><code><span data-idl="" class="idlInterface" id="idl-def-crypto-partial-1" data-title="Crypto">[<span class="extAttr"><a data-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed">Exposed</a>=(<a data-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window">Window</a>,<a data-lt="WorkerGlobalScope" data-type="interface" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">Worker</a>)</span>]
+      <pre class="idl def" id="webidl-1653845771"><span class="idlHeader"><a class="self-link" href="#webidl-1653845771">WebIDL</a></span><code><span data-idl="" class="idlInterface" id="idl-def-crypto-partial-1" data-title="Crypto">[<span class="extAttr"><a data-type="extended-attribute" href="https://webidl.spec.whatwg.org/#Exposed">Exposed</a>=(<a data-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window">Window</a>,<a data-lt="WorkerGlobalScope" data-type="interface" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">Worker</a>)</span>]
 partial interface <a data-idl="partial" data-link-type="interface" data-title="Crypto" class="idlID" data-dfn-for="Crypto" data-type="interface" href="https://www.w3.org/TR/WebCryptoAPI/#dfn-Crypto">Crypto</a> {<span data-idl="" class="idlMethod" id="idl-def-crypto-randomuuid" data-title="randomUUID" data-dfn-for="Crypto">
-  [<span class="extAttr"><a data-type="extended-attribute" href="https://heycam.github.io/webidl/#SecureContext">SecureContext</a></span>]<span class="idlType"> <a data-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <a class="internalDFN idlName" data-link-type="method" href="#dom-crypto-randomuuid" id="ref-for-dom-crypto-randomuuid-2"><code>randomUUID</code></a>();</span>
+  [<span class="extAttr"><a data-type="extended-attribute" href="https://webidl.spec.whatwg.org/#SecureContext">SecureContext</a></span>]<span class="idlType"> <a data-type="interface" href="https://webidl.spec.whatwg.org/#idl-DOMString">DOMString</a></span> <a class="internalDFN idlName" data-link-type="method" href="#dom-crypto-randomuuid" id="ref-for-dom-crypto-randomuuid-2"><code>randomUUID</code></a>();</span>
 };</span></code></pre>
       <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span></div><aside class="">
         <p>
@@ -344,15 +335,13 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
         To <dfn data-local-lt="generating a random UUID" data-export="" data-lt="generate a random UUID|generating a random UUID" id="dfn-generate-a-random-uuid" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">generate a random UUID</dfn>:
       </p>
       <ol>
-        <li>Let <var>array</var> be a <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> with 16 elements of the type <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#byte">byte</a>.
+        <li>Let <var>bytes</var> be a <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#list">list</a> with 16 elements of the type <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#byte">byte</a>.
         </li>
-        <li>Overwrite all elements of <var>array</var> with cryptographically secure
-        random values of the type <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#byte">byte</a>.
-        </li>
-        <li>Set the 4 most significant bits of <var>array</var>[6], which represent the
+        <li>Fill <var>bytes</var> with cryptographically secure random bytes.</li>
+        <li>Set the 4 most significant bits of <var>bytes</var>[6], which represent the
         UUID <a href="https://www.rfc-editor.org/rfc/rfc4122#section-4.1.3">version</a>, to <code>0b0100</code>.
         </li>
-        <li>Set the 2 most significant bits of <var>array</var>[8], which represent the
+        <li>Set the 2 most significant bits of <var>bytes</var>[8], which represent the
         UUID <a href="https://www.rfc-editor.org/rfc/rfc4122#section-4.1.1">variant</a>, to <code>0b10</code>.
         </li>
         <li>
@@ -360,26 +349,26 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
             Return the <a data-link-type="dfn" data-lt="concatenate" data-type="dfn" href="https://infra.spec.whatwg.org/#string-concatenate">concatenation</a> of «
           </p>
           <ol style="list-style-type: none">
-            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-1">hexadecimal representation</a> of <var>array</var>[0], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-2">hexadecimal representation</a> of <var>array</var>[1], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-3">hexadecimal representation</a> of
-            <var>array</var>[2], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-4">hexadecimal representation</a> of <var>array</var>[3],
+            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-1">hexadecimal representation</a> of <var>bytes</var>[0], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-2">hexadecimal representation</a> of <var>bytes</var>[1], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-3">hexadecimal representation</a> of
+            <var>bytes</var>[2], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-4">hexadecimal representation</a> of <var>bytes</var>[3],
             </li>
             <li><code>"-"</code>,
             </li>
-            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-5">hexadecimal representation</a> of <var>array</var>[4], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-6">hexadecimal representation</a> of <var>array</var>[5],
+            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-5">hexadecimal representation</a> of <var>bytes</var>[4], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-6">hexadecimal representation</a> of <var>bytes</var>[5],
             </li>
             <li><code>"-"</code>,
             </li>
-            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-7">hexadecimal representation</a> of <var>array</var>[6], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-8">hexadecimal representation</a> of <var>array</var>[7],
+            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-7">hexadecimal representation</a> of <var>bytes</var>[6], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-8">hexadecimal representation</a> of <var>bytes</var>[7],
             </li>
             <li><code>"-"</code>,
             </li>
-            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-9">hexadecimal representation</a> of <var>array</var>[8], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-10">hexadecimal representation</a> of <var>array</var>[9],
+            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-9">hexadecimal representation</a> of <var>bytes</var>[8], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-10">hexadecimal representation</a> of <var>bytes</var>[9],
             </li>
             <li><code>"-"</code>,
             </li>
-            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-11">hexadecimal representation</a> of <var>array</var>[10], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-12">hexadecimal representation</a> of <var>array</var>[11], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-13">hexadecimal representation</a> of
-            <var>array</var>[12], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-14">hexadecimal representation</a> of <var>array</var>[13],
-            <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-15">hexadecimal representation</a> of <var>array</var>[14], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-16">hexadecimal representation</a> of <var>array</var>[15]
+            <li><a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-11">hexadecimal representation</a> of <var>bytes</var>[10], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-12">hexadecimal representation</a> of <var>bytes</var>[11], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-13">hexadecimal representation</a> of
+            <var>bytes</var>[12], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-14">hexadecimal representation</a> of <var>bytes</var>[13],
+            <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-15">hexadecimal representation</a> of <var>bytes</var>[14], <a data-link-type="dfn" href="#dfn-hexadecimal-representation" class="internalDFN" id="ref-for-dfn-hexadecimal-representation-16">hexadecimal representation</a> of <var>bytes</var>[15]
             </li>
           </ol>
           <p>
@@ -388,11 +377,11 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
         </li>
       </ol>
       <p>
-        For the steps described in the <a data-link-type="dfn" href="#dfn-generate-a-random-uuid" class="internalDFN" id="ref-for-dfn-generate-a-random-uuid-2">generate a random UUID</a> algorithm,
-        the <dfn id="dfn-hexadecimal-representation" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">hexadecimal representation</dfn> of a <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#byte">byte</a> <var>value</var> is the
+        For the steps described in the algorithm to <a data-link-type="dfn" href="#dfn-generate-a-random-uuid" class="internalDFN" id="ref-for-dfn-generate-a-random-uuid-2">generate a random UUID</a>,
+        the <dfn id="dfn-hexadecimal-representation" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">hexadecimal representation</dfn> of a byte <var>value</var> is the
         two-character string created by expressing <var>value</var> in hexadecimal using
         <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#ascii-lower-hex-digit">ASCII lower hex digits</a>, left-padded with <code>"0"</code> to reach two
-        <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#code-point">characters</a>.
+        <a data-link-type="dfn" data-type="dfn" href="https://infra.spec.whatwg.org/#ascii-lower-hex-digit">ASCII lower hex digits</a>.
       </p>
     </section>
     <section id="security" class="informative">
@@ -458,7 +447,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
 
 <section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
     <h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
-    <dl class="bibliography"><dt id="bib-html">[HTML]</dt><dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></dd><dt id="bib-infra">[infra]</dt><dd><a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Anne van Kesteren; Domenic Denicola.  WHATWG. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a></dd><dt id="bib-rfc4122">[RFC4122]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc4122"><cite>A Universally Unique IDentifier (UUID) URN Namespace</cite></a>. P. Leach; M. Mealling; R. Salz.  IETF. July 2005. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc4122">https://www.rfc-editor.org/rfc/rfc4122</a></dd><dt id="bib-webcryptoapi">[WebCryptoAPI]</dt><dd><a href="https://www.w3.org/TR/WebCryptoAPI/"><cite>Web Cryptography API</cite></a>. Mark Watson.  W3C. 26 January 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WebCryptoAPI/">https://www.w3.org/TR/WebCryptoAPI/</a></dd><dt id="bib-webidl">[webidl]</dt><dd><a href="https://heycam.github.io/webidl/"><cite>Web IDL</cite></a>. Boris Zbarsky.  W3C. 15 December 2016. W3C Editor's Draft. URL: <a href="https://heycam.github.io/webidl/">https://heycam.github.io/webidl/</a></dd></dl>
+    <dl class="bibliography"><dt id="bib-html">[HTML]</dt><dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></dd><dt id="bib-infra">[infra]</dt><dd><a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Anne van Kesteren; Domenic Denicola.  WHATWG. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a></dd><dt id="bib-rfc4122">[RFC4122]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc4122"><cite>A Universally Unique IDentifier (UUID) URN Namespace</cite></a>. P. Leach; M. Mealling; R. Salz.  IETF. July 2005. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc4122">https://www.rfc-editor.org/rfc/rfc4122</a></dd><dt id="bib-webcryptoapi">[WebCryptoAPI]</dt><dd><a href="https://www.w3.org/TR/WebCryptoAPI/"><cite>Web Cryptography API</cite></a>. Mark Watson.  W3C. 26 January 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WebCryptoAPI/">https://www.w3.org/TR/WebCryptoAPI/</a></dd><dt id="bib-webidl">[webidl]</dt><dd><a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Edgar Chen; Timothy Gu.  WHATWG. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a></dd></dl>
   </section><section id="informative-references">
     <h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
     <dl class="bibliography"><dt id="bib-rfc2141">[RFC2141]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc2141"><cite>URN Syntax</cite></a>. R. Moats.  IETF. May 1997. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc2141">https://www.rfc-editor.org/rfc/rfc2141</a></dd></dl>
