@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.16.0">
+<meta name="generator" content="ReSpec 28.1.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 span.example-title{text-transform:none}
@@ -184,16 +184,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "specStatus": "CG-DRAFT",
   "group": "wicg",
   "xref": "web-platform",
-  "publishISODate": "2021-10-15T00:00:00.000Z",
-  "generatedSubtitle": "Draft Community Group Report 15 October 2021"
+  "publishISODate": "2021-12-31T00:00:00.000Z",
+  "generatedSubtitle": "Draft Community Group Report 31 December 2021"
 }</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-draft"></head>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/cg-draft"></head>
   <body data-cite="WEBIDL webcryptoapi HTML INFRA URL WEBIDL DOM FETCH" class="h-entry"><div class="head">
      <h1 id="title" class="title">uuid</h1>
     
     <h2>
       Draft Community Group Report
-      <time class="dt-published" datetime="2021-10-15">15 October 2021</time>
+      <time class="dt-published" datetime="2021-12-31">31 December 2021</time>
     </h2>
     <dl>
       
@@ -225,7 +225,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           
           the Contributors to the uuid
           Specification, published by the
-          <a href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a> under the
+          <a href="https://www.w3.org/groups/cg/wicg">Web Platform Incubator Community Group</a> under the
           <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>. A human-readable
                 <a href="https://www.w3.org/community/about/agreements/cla-deed/">summary</a>
                 is available.
@@ -233,16 +233,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         </p>
     <hr title="Separator for header">
   </div>
-    <section id="abstract" class="introductory"><h2>Abstract</h2>
+    <section id="abstract" class="introductory"><h2 id="abstract-0">Abstract<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2>
       <p>
         This specification describes an API for generating character encoded
         Universally Unique Identifiers (UUID) based on [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc4122" title="A Universally Unique IDentifier (UUID) URN Namespace">RFC4122</a></cite>], available
         as a method on the <a data-link-type="idl" data-lt="Crypto" data-type="interface" href="https://www.w3.org/TR/WebCryptoAPI/#dfn-Crypto"><code>Crypto</code></a> interface.
       </p>
     </section>
-    <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>
+    <section id="sotd" class="introductory"><h2 id="status-of-this-document">Status of This Document<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2><p>
       This specification was published by the
-      <a href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a>. It is not a W3C Standard nor is it
+      <a href="https://www.w3.org/groups/cg/wicg">Web Platform Incubator Community Group</a>. It is not a W3C Standard nor is it
       on the W3C Standards Track.
       
             Please note that under the
@@ -278,7 +278,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <section id="goals">
       <h2 id="x1-goals"><bdi class="secno">1. </bdi>
         Goals
-      <a class="self-link" aria-label="§" href="#goals"></a></h2>
+      <a class="self-link" href="#goals" aria-label="Permalink for Section 1."></a></h2>
       <p>
         Provide a straightforward and secure mechanism for generating UUIDs
         that addresses developers' common needs (identifiers for generated pages,
@@ -290,7 +290,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <section id="usage-example">
       <h2 id="x2-usage-example"><bdi class="secno">2. </bdi>
         Usage Example
-      <a class="self-link" aria-label="§" href="#usage-example"></a></h2>
+      <a class="self-link" href="#usage-example" aria-label="Permalink for Section 2."></a></h2>
       <p>
         To generate a UUID, simply call <a data-link-type="idl" data-lt="Crypto" data-type="interface" href="https://www.w3.org/TR/WebCryptoAPI/#dfn-Crypto"><code>Crypto</code></a>'s <a data-link-type="idl" data-lt="randomUUID()" href="#dom-crypto-randomuuid" class="internalDFN" id="ref-for-dom-crypto-randomuuid-1"><code>randomUUID</code></a><code>()</code>
         method:
@@ -305,7 +305,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <section data-dfn-for="Crypto" id="extensions-to-the-crypto-interface">
       <h2 id="x3-extensions-to-the-crypto-interface"><bdi class="secno">3. </bdi>
         Extensions to the <code>Crypto</code> interface
-      <a class="self-link" aria-label="§" href="#extensions-to-the-crypto-interface"></a></h2>
+      <a class="self-link" href="#extensions-to-the-crypto-interface" aria-label="Permalink for Section 3."></a></h2>
       <pre class="idl def" id="webidl-1653845771"><span class="idlHeader"><a class="self-link" href="#webidl-1653845771">WebIDL</a></span><code><span data-idl="" class="idlInterface" id="idl-def-crypto-partial-1" data-title="Crypto">[<span class="extAttr"><a data-type="extended-attribute" href="https://webidl.spec.whatwg.org/#Exposed">Exposed</a>=(<a data-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window">Window</a>,<a data-lt="WorkerGlobalScope" data-type="interface" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">Worker</a>)</span>]
 partial interface <a data-idl="partial" data-link-type="interface" data-title="Crypto" class="idlID" data-dfn-for="Crypto" data-type="interface" href="https://www.w3.org/TR/WebCryptoAPI/#dfn-Crypto">Crypto</a> {<span data-idl="" class="idlMethod" id="idl-def-crypto-randomuuid" data-title="randomUUID" data-dfn-for="Crypto">
   [<span class="extAttr"><a data-type="extended-attribute" href="https://webidl.spec.whatwg.org/#SecureContext">SecureContext</a></span>]<span class="idlType"> <a data-type="interface" href="https://webidl.spec.whatwg.org/#idl-DOMString">DOMString</a></span> <a class="internalDFN idlName" data-link-type="method" href="#dom-crypto-randomuuid" id="ref-for-dom-crypto-randomuuid-2"><code>randomUUID</code></a>();</span>
@@ -320,7 +320,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
       <section id="the-randomuuid-method">
         <h3 id="x3-1-the-randomuuid-method"><bdi class="secno">3.1 </bdi>
           The <code>randomUUID()</code> method
-        <a class="self-link" aria-label="§" href="#the-randomuuid-method"></a></h3>
+        <a class="self-link" href="#the-randomuuid-method" aria-label="Permalink for Section 3.1"></a></h3>
         <p>
           The <dfn data-export="" data-dfn-type="method" id="dom-crypto-randomuuid" data-idl="operation" data-title="randomUUID()" data-dfn-for="Crypto" data-type="DOMString" data-lt="randomUUID()" data-local-lt="Crypto.randomUUID|Crypto.randomUUID()|randomUUID" tabindex="0" aria-haspopup="dialog"><code>randomUUID()</code></dfn> method steps are to return the result of
           <a data-link-type="dfn" href="#dfn-generate-a-random-uuid" class="internalDFN" id="ref-for-dfn-generate-a-random-uuid-1">generating a random UUID</a>.
@@ -330,7 +330,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
     <section id="generating-a-random-uuid">
       <h2 id="x4-generating-a-random-uuid"><bdi class="secno">4. </bdi>
         Generating a random UUID
-      <a class="self-link" aria-label="§" href="#generating-a-random-uuid"></a></h2>
+      <a class="self-link" href="#generating-a-random-uuid" aria-label="Permalink for Section 4."></a></h2>
       <p>
         To <dfn data-local-lt="generating a random UUID" data-export="" data-lt="generate a random UUID|generating a random UUID" id="dfn-generate-a-random-uuid" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">generate a random UUID</dfn>:
       </p>
@@ -387,7 +387,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
     <section id="security" class="informative">
       <h2 id="x5-security-considerations"><bdi class="secno">5. </bdi>
         Security considerations
-      <a class="self-link" aria-label="§" href="#security"></a></h2><p><em>This section is non-normative.</em></p>
+      <a class="self-link" href="#security" aria-label="Permalink for Section 5."></a></h2><p><em>This section is non-normative.</em></p>
       <dl>
         <dt>
           Denial of service
@@ -417,7 +417,7 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
     <section id="privacy" class="informative">
       <h2 id="x6-privacy-considerations"><bdi class="secno">6. </bdi>
         Privacy considerations
-      <a class="self-link" aria-label="§" href="#privacy"></a></h2><p><em>This section is non-normative.</em></p>
+      <a class="self-link" href="#privacy" aria-label="Permalink for Section 6."></a></h2><p><em>This section is non-normative.</em></p>
       <dl>
         <dt>
           Fingerprinting
@@ -442,14 +442,14 @@ partial interface <a data-idl="partial" data-link-type="interface" data-title="C
         </dd>
       </dl>
     </section>
-    <section id="conformance"><h2 id="x7-conformance"><bdi class="secno">7. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p></section>
+    <section id="conformance"><h2 id="x7-conformance"><bdi class="secno">7. </bdi>Conformance<a class="self-link" href="#conformance" aria-label="Permalink for Section 7."></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p></section>
   
 
-<section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
-    <h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
+<section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></h2><section id="normative-references">
+    <h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references<a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></h3>
     <dl class="bibliography"><dt id="bib-html">[HTML]</dt><dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></dd><dt id="bib-infra">[infra]</dt><dd><a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Anne van Kesteren; Domenic Denicola.  WHATWG. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a></dd><dt id="bib-rfc4122">[RFC4122]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc4122"><cite>A Universally Unique IDentifier (UUID) URN Namespace</cite></a>. P. Leach; M. Mealling; R. Salz.  IETF. July 2005. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc4122">https://www.rfc-editor.org/rfc/rfc4122</a></dd><dt id="bib-webcryptoapi">[WebCryptoAPI]</dt><dd><a href="https://www.w3.org/TR/WebCryptoAPI/"><cite>Web Cryptography API</cite></a>. Mark Watson.  W3C. 26 January 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WebCryptoAPI/">https://www.w3.org/TR/WebCryptoAPI/</a></dd><dt id="bib-webidl">[webidl]</dt><dd><a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Edgar Chen; Timothy Gu.  WHATWG. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a></dd></dl>
   </section><section id="informative-references">
-    <h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
+    <h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references<a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.2"></a></h3>
     <dl class="bibliography"><dt id="bib-rfc2141">[RFC2141]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc2141"><cite>URN Syntax</cite></a>. R. Moats.  IETF. May 1997. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc2141">https://www.rfc-editor.org/rfc/rfc2141</a></dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
@@ -719,4 +719,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
