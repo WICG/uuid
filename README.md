@@ -1,6 +1,6 @@
 # uuid
 
-This is the repository for uuid. You're welcome to
+This is the repository for [the WICG `uuid` Specification](https://wicg.github.io/uuid/). You're welcome to
 [contribute](CONTRIBUTING.md)!
 
 ## Implementation status
