@@ -1,57 +1,6 @@
 # uuid
 
-This was the repository for [the WICG `uuid` Specification](https://w3c.github.io/webcrypto/#Crypto-method-randomUUID). 
+This repository formerly hosted the incubation efforts for the [`crypto.randomUUID()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID) method. The specification has now been upstreamed into the larger [Web Crypto specification](https://w3c.github.io/webcrypto/#Crypto-method-randomUUID), and so our work here is done!
 
-The proposal was succesfully incubated and is now part of the Web Crypto specification at the [`randomUUID()` method](https://w3c.github.io/webcrypto/#Crypto-method-randomUUID). 
+You can view [previous revisions of this repository](https://github.com/WICG/uuid/tree/14c29dce221dbd375dde60718c226cad49dbe1e7) to learn more about the incubation.
 
-## Implementation status
-
- * [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=1197594) - Shipping 92.
- * [Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1723674) - shipped in FF95.
- * [WebKit](https://bugs.webkit.org/show_bug.cgi?id=229240) - shipped in Safari.
-
-### Other runtimes
-
-* [Deno](https://github.com/denoland/deno/pull/10848) - v1.11.
-* [Node.js](https://github.com/nodejs/node/pull/36729) - v14.17.0.
-
-## Usage example
-
-```JS
-const uuid = crypto.randomUUID();
-```
-## Motivation
-
-### UUID generation is a common software requirement
-
-The <a href="https://www.npmjs.com/package/uuid">uuid library</a> on npm
-currently receives 131,000,000 monthly downloads and is relied on by over
-2,600,000 repositories (as of June 2019).
-
-The ubiquitous nature of the `uuid` module demonstrates that UUID generation is a common
-requirement for JavaScript software applications, making the functionality a good candidate for the
-standard library.
-### Developers "re-inventing the wheel" is potentially harmful
-
-Developers who have not been exposed to [RFC4122](https://www.rfc-editor.org/rfc/rfc4122) might naturally opt to invent their own approaches
-to UUID generation, potentially using `Math.random()`.
-
-There's an in-depth discussion of why a Cryptographically-Secure-Pseudo-Random-Number-Generator
-(CSPRNG) should be used when generating UUIDs. Of primary concern is that, without a high-quality source
-of randomness, collisions can frequently occur.
-
-Introducing a UUID standard library, which dictates that a CSPRNG must be used, helps protect developers from security pitfalls.
-
-## Potential future work
-
-### Support for additional UUID formats
-
-If compelling use cases are found for other UUID formats, the API might be extended to support them. If this is of interest to you, please join the discussion in [issue #36](https://github.com/WICG/uuid/issues/36).
-
-### Add isValidUUID method
-
-In reviewing [chromium#2804758](https://chromium-review.googlesource.com/c/chromium/src/+/2804758), [@mikewest](https://github.com/mikewest) suggested:
-
-> For the future: I wonder whether it's worth exposing `WTF::IsValidUUID` as well, as an analog to the `uuid.validate()` method in the UUID npm package?
-
-It would be worth exploring if users would find exposing this method useful.
