@@ -1,13 +1,14 @@
 # uuid
 
-This is the repository for [the WICG `uuid` Specification](https://wicg.github.io/uuid/). You're welcome to
-[contribute](CONTRIBUTING.md)!
+This was the repository for [the WICG `uuid` Specification](https://w3c.github.io/webcrypto/#Crypto-method-randomUUID). 
+
+The proposal was succesfully incubated and is now part of the Web Crypto specification at the [`randomUUID()` method](https://w3c.github.io/webcrypto/#Crypto-method-randomUUID). 
 
 ## Implementation status
 
  * [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=1197594) - Shipping 92.
- * [Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1723674) - Work in progress.
- * [WebKit](https://bugs.webkit.org/show_bug.cgi?id=229240) - Implemented, not shipped yet.
+ * [Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1723674) - shipped in FF95.
+ * [WebKit](https://bugs.webkit.org/show_bug.cgi?id=229240) - shipped in Safari.
 
 ### Other runtimes
 
